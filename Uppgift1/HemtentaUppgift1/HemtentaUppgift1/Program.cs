@@ -17,17 +17,20 @@ namespace HemtentaUppgift1
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 			Application.Run(new Form1());
+			
+			
 		}
+
 	}
 
 
 	public class OrderItem
 	{
 		public string soda;
-		public int amount;
+		public string amount;
 		public bool sugarFree;
 
-		public OrderItem(string Soda, int Amount, bool SugarFree) 
+		public OrderItem(string Soda, string Amount, bool SugarFree) 
 		{
 			soda = Soda;
 			amount = Amount;
