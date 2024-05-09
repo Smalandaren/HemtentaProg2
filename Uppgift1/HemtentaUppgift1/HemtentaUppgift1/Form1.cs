@@ -23,35 +23,11 @@ namespace HemtentaUppgift1
 			BackgroundImage = Properties.Resources.soda;
 		}
 
-		private void Form1_Load(object sender, EventArgs e)
-		{
-
-		}
-
-		private void SodaDropDown_SelectedIndexChanged(object sender, EventArgs e)
-		{
-
-		}
-
-		private void SugarFreeCheck_CheckedChanged(object sender, EventArgs e)
-		{
-
-		}
-
-		private void AmountDropDown_SelectedIndexChanged(object sender, EventArgs e)
-		{
-
-		}
-
 		private void OrderButton_Click(object sender, EventArgs e)
 		{
 			Order();
 		}
 
-		private void OrderTextBox_TextChanged(object sender, EventArgs e)
-		{
-
-		}
 
 		public void Order()
 		{
