@@ -84,6 +84,7 @@
 			// 
 			// OrderButton
 			// 
+			this.OrderButton.Font = new System.Drawing.Font("Microsoft Tai Le", 18F);
 			this.OrderButton.Location = new System.Drawing.Point(20, 172);
 			this.OrderButton.Name = "OrderButton";
 			this.OrderButton.Size = new System.Drawing.Size(121, 48);
@@ -97,7 +98,7 @@
 			this.OrderTextBox.Location = new System.Drawing.Point(162, 44);
 			this.OrderTextBox.Name = "OrderTextBox";
 			this.OrderTextBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-			this.OrderTextBox.Size = new System.Drawing.Size(249, 299);
+			this.OrderTextBox.Size = new System.Drawing.Size(249, 324);
 			this.OrderTextBox.TabIndex = 4;
 			this.OrderTextBox.Text = "";
 			this.OrderTextBox.TextChanged += new System.EventHandler(this.OrderTextBox_TextChanged);
@@ -116,7 +117,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(432, 415);
+			this.ClientSize = new System.Drawing.Size(432, 431);
 			this.Controls.Add(this.ErrorMessage);
 			this.Controls.Add(this.OrderTextBox);
 			this.Controls.Add(this.OrderButton);

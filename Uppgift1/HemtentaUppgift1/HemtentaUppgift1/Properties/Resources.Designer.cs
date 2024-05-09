@@ -63,6 +63,16 @@ namespace HemtentaUppgift1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap soda {
+            get {
+                object obj = ResourceManager.GetObject("soda", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap vendingMachine {
             get {
                 object obj = ResourceManager.GetObject("vendingMachine", resourceCulture);

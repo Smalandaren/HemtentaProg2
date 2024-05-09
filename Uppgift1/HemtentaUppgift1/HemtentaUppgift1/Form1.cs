@@ -20,7 +20,7 @@ namespace HemtentaUppgift1
 			InitializeComponent();
 			SodaDropDown.SelectedIndex = 0;
 			AmountDropDown.SelectedIndex = 0;
-			BackgroundImage = Properties.Resources.vendingMachine;
+			BackgroundImage = Properties.Resources.soda;
 		}
 
 		private void Form1_Load(object sender, EventArgs e)
@@ -91,10 +91,8 @@ namespace HemtentaUppgift1
 					sugarStatus = "Vanlig";
 				}
 				OrderTextBox.Text += (item.soda + " - " + sugarStatus + " - " + item.amount + "\n");
-				
+
 			}
 		}
-
-
 	}
 }
