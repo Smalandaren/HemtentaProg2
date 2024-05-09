@@ -23,11 +23,35 @@ namespace HemtentaUppgift1
 			BackgroundImage = Properties.Resources.soda;
 		}
 
+		private void Form1_Load(object sender, EventArgs e)
+		{
+
+		}
+
+		private void SodaDropDown_SelectedIndexChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void SugarFreeCheck_CheckedChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void AmountDropDown_SelectedIndexChanged(object sender, EventArgs e)
+		{
+
+		}
+
 		private void OrderButton_Click(object sender, EventArgs e)
 		{
 			Order();
 		}
 
+		private void OrderTextBox_TextChanged(object sender, EventArgs e)
+		{
+
+		}
 
 		public void Order()
 		{
@@ -42,8 +66,6 @@ namespace HemtentaUppgift1
 				UpdateOrder();
 
 			} else {Error();}
-
-			
 		}
 
 		public void Error() 
@@ -57,17 +79,8 @@ namespace HemtentaUppgift1
 			OrderTextBox.Clear();
 			foreach (OrderItem item in orderList)
 			{
-				string sugarStatus;
-				if (item.sugarFree)
-				{
-					sugarStatus = "Zero";
-				}
-				else
-				{
-					sugarStatus = "Vanlig";
-				}
+				string sugarStatus = (item.sugarFree) ? "zero" : "vanlig";
 				OrderTextBox.Text += (item.soda + " - " + sugarStatus + " - " + item.amount + "\n");
-
 			}
 		}
 	}
