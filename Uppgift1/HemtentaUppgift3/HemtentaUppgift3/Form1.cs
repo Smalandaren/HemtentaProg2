@@ -102,16 +102,17 @@ namespace HemtentaUppgift3
 
         public void updateOrder()
         {
-            orderTextBox.Clear();
+            orderBox.Items.Clear();
 
             int totalPrice = 0;
 
             foreach (Dish dish in orderList)
             {
-                orderTextBox.Text += (dish.name + "  -  " + dish.price + " kr" + "\n");
+                orderBox.Items.Add(String.Format("{0,-22} {1,10:C2}", dish.name, dish.price + " kr"));
                 totalPrice += dish.price;
             }
-            orderTextBox.Text += "\nSumma: " + totalPrice.ToString() + " kr";
+            orderBox.Items.Add("");
+            orderBox.Items.Add("Summa: " + totalPrice.ToString() + " kr");
         }
 
         private void orderButton_Click(object sender, EventArgs e)
@@ -125,13 +126,30 @@ namespace HemtentaUppgift3
             totalLabel.Text = "\nSumma: " + totalPrice.ToString() + " kr";
             orderedLabel.Visible = true;
             orderList.Clear();
-            orderTextBox.Clear();
+        }
+
+        public void ClearOrder()
+        {
+            orderList.Clear();
+            orderBox.Items.Clear();
         }
 
         private void clearButton_Click(object sender, EventArgs e)
         {
-            orderList.Clear();
-            orderTextBox.Clear();
+            ClearOrder();
+            orderedLabel.Visible = false;
+            totalLabel.Text = "";
+        }
+
+        private void removeButton_Click(object sender, EventArgs e)
+        {
+            int index = orderBox.SelectedIndex;
+            if(index < orderList.Count())
+            {
+                orderBox.Items.RemoveAt(index);
+                orderList.RemoveAt(index);
+                updateOrder();
+            }
         }
     }
 }

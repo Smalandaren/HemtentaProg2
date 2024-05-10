@@ -28,23 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.orderTextBox = new System.Windows.Forms.RichTextBox();
             this.orderButton = new System.Windows.Forms.Button();
             this.orderedLabel = new System.Windows.Forms.Label();
             this.totalLabel = new System.Windows.Forms.Label();
             this.clearButton = new System.Windows.Forms.Button();
+            this.orderBox = new System.Windows.Forms.ListBox();
+            this.removeButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // orderTextBox
-            // 
-            this.orderTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.orderTextBox.Location = new System.Drawing.Point(548, 12);
-            this.orderTextBox.Name = "orderTextBox";
-            this.orderTextBox.ReadOnly = true;
-            this.orderTextBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.orderTextBox.Size = new System.Drawing.Size(240, 352);
-            this.orderTextBox.TabIndex = 0;
-            this.orderTextBox.Text = "";
             // 
             // orderButton
             // 
@@ -76,7 +66,7 @@
             // 
             // clearButton
             // 
-            this.clearButton.Location = new System.Drawing.Point(548, 408);
+            this.clearButton.Location = new System.Drawing.Point(12, 408);
             this.clearButton.Name = "clearButton";
             this.clearButton.Size = new System.Drawing.Size(90, 30);
             this.clearButton.TabIndex = 4;
@@ -84,16 +74,37 @@
             this.clearButton.UseVisualStyleBackColor = true;
             this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
             // 
+            // orderBox
+            // 
+            this.orderBox.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.orderBox.FormattingEnabled = true;
+            this.orderBox.ItemHeight = 14;
+            this.orderBox.Location = new System.Drawing.Point(548, 12);
+            this.orderBox.Name = "orderBox";
+            this.orderBox.Size = new System.Drawing.Size(240, 354);
+            this.orderBox.TabIndex = 5;
+            // 
+            // removeButton
+            // 
+            this.removeButton.Location = new System.Drawing.Point(548, 408);
+            this.removeButton.Name = "removeButton";
+            this.removeButton.Size = new System.Drawing.Size(90, 30);
+            this.removeButton.TabIndex = 6;
+            this.removeButton.Text = "Ta bort";
+            this.removeButton.UseVisualStyleBackColor = true;
+            this.removeButton.Click += new System.EventHandler(this.removeButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.removeButton);
+            this.Controls.Add(this.orderBox);
             this.Controls.Add(this.clearButton);
             this.Controls.Add(this.totalLabel);
             this.Controls.Add(this.orderedLabel);
             this.Controls.Add(this.orderButton);
-            this.Controls.Add(this.orderTextBox);
             this.Name = "Form1";
             this.Text = "Resturangen";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -103,12 +114,12 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.RichTextBox orderTextBox;
         private System.Windows.Forms.Button orderButton;
         private System.Windows.Forms.Label orderedLabel;
         private System.Windows.Forms.Label totalLabel;
         private System.Windows.Forms.Button clearButton;
+        private System.Windows.Forms.ListBox orderBox;
+        private System.Windows.Forms.Button removeButton;
     }
 }
 
