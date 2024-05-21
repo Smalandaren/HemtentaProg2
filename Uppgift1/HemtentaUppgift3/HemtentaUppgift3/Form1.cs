@@ -85,6 +85,10 @@ namespace HemtentaUppgift3
             updateOrder();
         }
 
+        /// <summary>
+        /// Lägger till en item i orderList
+        /// </summary>
+        /// <param name="name"></param>
         public void AddItem(string name)
         {
             Dish dish = new Dish("fel", 0, "fel");
@@ -100,6 +104,9 @@ namespace HemtentaUppgift3
             orderList.Add(dish);
         }
 
+        /// <summary>
+        /// Uppdaterar orderboxen genom att rensa den och sätta innehållet till allt i orderlist + räkna ut summan
+        /// </summary>
         public void updateOrder()
         {
             orderBox.Items.Clear();
@@ -151,5 +158,10 @@ namespace HemtentaUppgift3
                 updateOrder();
             }
         }
-    }
+
+		private void orderBox_SelectedIndexChanged(object sender, EventArgs e)
+		{
+
+		}
+	}
 }
