@@ -76,12 +76,29 @@ namespace HemtentaUppgift1
 		public void UpdateOrder()
 		{
 			ErrorMessage.Visible = false;
-			OrderTextBox.Clear();
+			OutputBox.Items.Clear();
 			foreach (OrderItem item in orderList)
 			{
 				string sugarStatus = (item.sugarFree) ? "zero" : "vanlig";
-				OrderTextBox.Text += (item.soda + " - " + sugarStatus + " - " + item.amount + "\n");
+				OutputBox.Items.Add(item.soda + " - " + sugarStatus + " - " + item.amount + "\n");
 			}
+		}
+
+		public void RemoveItem()
+		{
+			orderList.RemoveAt(OutputBox.SelectedIndex);
+			UpdateOrder();
+		}
+
+		private void ClearButton_Click(object sender, EventArgs e)
+		{
+			orderList.Clear();
+			UpdateOrder();
+		}
+
+		private void RemoveButton_Click(object sender, EventArgs e)
+		{
+			RemoveItem();
 		}
 	}
 }

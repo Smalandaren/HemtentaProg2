@@ -32,8 +32,10 @@
 			this.AmountDropDown = new System.Windows.Forms.ComboBox();
 			this.SugarFreeCheck = new System.Windows.Forms.CheckBox();
 			this.OrderButton = new System.Windows.Forms.Button();
-			this.OrderTextBox = new System.Windows.Forms.RichTextBox();
 			this.ErrorMessage = new System.Windows.Forms.Label();
+			this.OutputBox = new System.Windows.Forms.ListBox();
+			this.ClearButton = new System.Windows.Forms.Button();
+			this.RemoveButton = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// SodaDropDown
@@ -93,16 +95,6 @@
 			this.OrderButton.UseVisualStyleBackColor = true;
 			this.OrderButton.Click += new System.EventHandler(this.OrderButton_Click);
 			// 
-			// OrderTextBox
-			// 
-			this.OrderTextBox.Location = new System.Drawing.Point(162, 44);
-			this.OrderTextBox.Name = "OrderTextBox";
-			this.OrderTextBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-			this.OrderTextBox.Size = new System.Drawing.Size(249, 324);
-			this.OrderTextBox.TabIndex = 4;
-			this.OrderTextBox.Text = "";
-			this.OrderTextBox.TextChanged += new System.EventHandler(this.OrderTextBox_TextChanged);
-			// 
 			// ErrorMessage
 			// 
 			this.ErrorMessage.AutoSize = true;
@@ -113,13 +105,43 @@
 			this.ErrorMessage.Text = "Du måste fylla i allt";
 			this.ErrorMessage.Visible = false;
 			// 
+			// OutputBox
+			// 
+			this.OutputBox.FormattingEnabled = true;
+			this.OutputBox.Location = new System.Drawing.Point(171, 44);
+			this.OutputBox.Name = "OutputBox";
+			this.OutputBox.Size = new System.Drawing.Size(249, 329);
+			this.OutputBox.TabIndex = 6;
+			// 
+			// ClearButton
+			// 
+			this.ClearButton.Location = new System.Drawing.Point(20, 342);
+			this.ClearButton.Name = "ClearButton";
+			this.ClearButton.Size = new System.Drawing.Size(77, 31);
+			this.ClearButton.TabIndex = 7;
+			this.ClearButton.Text = "Rensa";
+			this.ClearButton.UseVisualStyleBackColor = true;
+			this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
+			// 
+			// RemoveButton
+			// 
+			this.RemoveButton.Location = new System.Drawing.Point(20, 305);
+			this.RemoveButton.Name = "RemoveButton";
+			this.RemoveButton.Size = new System.Drawing.Size(77, 31);
+			this.RemoveButton.TabIndex = 8;
+			this.RemoveButton.Text = "Ta Bort";
+			this.RemoveButton.UseVisualStyleBackColor = true;
+			this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click);
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(432, 431);
+			this.Controls.Add(this.RemoveButton);
+			this.Controls.Add(this.ClearButton);
+			this.Controls.Add(this.OutputBox);
 			this.Controls.Add(this.ErrorMessage);
-			this.Controls.Add(this.OrderTextBox);
 			this.Controls.Add(this.OrderButton);
 			this.Controls.Add(this.SugarFreeCheck);
 			this.Controls.Add(this.AmountDropDown);
@@ -138,8 +160,10 @@
 		private System.Windows.Forms.ComboBox AmountDropDown;
 		private System.Windows.Forms.CheckBox SugarFreeCheck;
 		private System.Windows.Forms.Button OrderButton;
-		private System.Windows.Forms.RichTextBox OrderTextBox;
 		private System.Windows.Forms.Label ErrorMessage;
+		private System.Windows.Forms.ListBox OutputBox;
+		private System.Windows.Forms.Button ClearButton;
+		private System.Windows.Forms.Button RemoveButton;
 	}
 }
 
