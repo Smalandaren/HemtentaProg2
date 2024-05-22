@@ -39,5 +39,4 @@ namespace HemtentaUppgift1
 
 	}
 
-
 }
