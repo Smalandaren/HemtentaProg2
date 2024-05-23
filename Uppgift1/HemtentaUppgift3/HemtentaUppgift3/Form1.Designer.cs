@@ -34,12 +34,15 @@
 			this.clearButton = new System.Windows.Forms.Button();
 			this.orderBox = new System.Windows.Forms.ListBox();
 			this.removeButton = new System.Windows.Forms.Button();
+			this.MainLabel = new System.Windows.Forms.Label();
+			this.DessertLabel = new System.Windows.Forms.Label();
+			this.DrinkLabel = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// orderButton
 			// 
 			this.orderButton.Location = new System.Drawing.Point(931, 502);
-			this.orderButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.orderButton.Margin = new System.Windows.Forms.Padding(4);
 			this.orderButton.Name = "orderButton";
 			this.orderButton.Size = new System.Drawing.Size(120, 37);
 			this.orderButton.TabIndex = 1;
@@ -70,7 +73,7 @@
 			// clearButton
 			// 
 			this.clearButton.Location = new System.Drawing.Point(16, 502);
-			this.clearButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.clearButton.Margin = new System.Windows.Forms.Padding(4);
 			this.clearButton.Name = "clearButton";
 			this.clearButton.Size = new System.Drawing.Size(120, 37);
 			this.clearButton.TabIndex = 4;
@@ -84,7 +87,7 @@
 			this.orderBox.FormattingEnabled = true;
 			this.orderBox.ItemHeight = 17;
 			this.orderBox.Location = new System.Drawing.Point(731, 15);
-			this.orderBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.orderBox.Margin = new System.Windows.Forms.Padding(4);
 			this.orderBox.Name = "orderBox";
 			this.orderBox.Size = new System.Drawing.Size(319, 429);
 			this.orderBox.TabIndex = 5;
@@ -93,7 +96,7 @@
 			// removeButton
 			// 
 			this.removeButton.Location = new System.Drawing.Point(731, 502);
-			this.removeButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.removeButton.Margin = new System.Windows.Forms.Padding(4);
 			this.removeButton.Name = "removeButton";
 			this.removeButton.Size = new System.Drawing.Size(120, 37);
 			this.removeButton.TabIndex = 6;
@@ -101,18 +104,51 @@
 			this.removeButton.UseVisualStyleBackColor = true;
 			this.removeButton.Click += new System.EventHandler(this.removeButton_Click);
 			// 
+			// MainLabel
+			// 
+			this.MainLabel.AutoSize = true;
+			this.MainLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+			this.MainLabel.Location = new System.Drawing.Point(40, 70);
+			this.MainLabel.Name = "MainLabel";
+			this.MainLabel.Size = new System.Drawing.Size(133, 31);
+			this.MainLabel.TabIndex = 7;
+			this.MainLabel.Text = "Huvudrätt";
+			// 
+			// DessertLabel
+			// 
+			this.DessertLabel.AutoSize = true;
+			this.DessertLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+			this.DessertLabel.Location = new System.Drawing.Point(40, 195);
+			this.DessertLabel.Name = "DessertLabel";
+			this.DessertLabel.Size = new System.Drawing.Size(112, 31);
+			this.DessertLabel.TabIndex = 8;
+			this.DessertLabel.Text = "Efterrätt";
+			// 
+			// DrinkLabel
+			// 
+			this.DrinkLabel.AutoSize = true;
+			this.DrinkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+			this.DrinkLabel.Location = new System.Drawing.Point(40, 320);
+			this.DrinkLabel.Name = "DrinkLabel";
+			this.DrinkLabel.Size = new System.Drawing.Size(92, 31);
+			this.DrinkLabel.TabIndex = 9;
+			this.DrinkLabel.Text = "Dricka";
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1067, 554);
+			this.Controls.Add(this.DrinkLabel);
+			this.Controls.Add(this.DessertLabel);
+			this.Controls.Add(this.MainLabel);
 			this.Controls.Add(this.removeButton);
 			this.Controls.Add(this.orderBox);
 			this.Controls.Add(this.clearButton);
 			this.Controls.Add(this.totalLabel);
 			this.Controls.Add(this.orderedLabel);
 			this.Controls.Add(this.orderButton);
-			this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "Form1";
 			this.Text = "Resturangen";
 			this.Load += new System.EventHandler(this.Form1_Load);
@@ -128,6 +164,9 @@
         private System.Windows.Forms.Button clearButton;
         private System.Windows.Forms.ListBox orderBox;
         private System.Windows.Forms.Button removeButton;
-    }
+		private System.Windows.Forms.Label MainLabel;
+		private System.Windows.Forms.Label DessertLabel;
+		private System.Windows.Forms.Label DrinkLabel;
+	}
 }
 
