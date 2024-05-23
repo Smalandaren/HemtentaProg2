@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HemtentaUppgift2
@@ -25,6 +20,14 @@ namespace HemtentaUppgift2
 
 		private void BookButton_Click(object sender, EventArgs e)
 		{
+			if(MovieSelector.Text == String.Empty)
+			{
+                Console.WriteLine("Ingen film vald");
+				ChooseMovieLabel.ForeColor = Color.Red;
+				return;
+            }
+
+			bool found = false;
 			foreach (CheckBox button in buttons)
 			{
 				foreach (Seat seat in seats)
@@ -32,19 +35,18 @@ namespace HemtentaUppgift2
                     //Console.WriteLine($"{button.Name} + {seat.name} + {MovieSelector.Text} + {seat.movie} + {button.Checked}");
                     if (button.Name == seat.name && seat.movie == MovieSelector.Text && button.Checked)
 					{
-						if (seat.booked)
-						{
-                            Console.WriteLine("Redan taget");
-						}
-						else
-						{
-                            Console.WriteLine("Bokat");
-                            seat.booked = true;
-							button.Checked = false;
-							button.Enabled = false;
-						}
+						found = true;
+                        seat.booked = true;
+						button.Checked = false;
+						button.Enabled = false;
+						ChooseSeatLabel.ForeColor = Color.Black;
 					}
 				}
+			}
+
+			if (!found)
+			{
+				ChooseSeatLabel.ForeColor = Color.Red;
 			}
 		}
 
@@ -66,8 +68,8 @@ namespace HemtentaUppgift2
 
         public void CreateButtons()
         {
-			int x = 20;
-			int y = 30;
+			int x = 10;
+			int y = 60;
 
 			foreach (char c in "ABCDEFGHIJ")
 			{
@@ -90,7 +92,7 @@ namespace HemtentaUppgift2
 
 				}
 				y += 30;
-				x = 20;
+				x = 10;
 			}
 			
 		}
@@ -105,6 +107,8 @@ namespace HemtentaUppgift2
 
 		private void MovieSelector_SelectedIndexChanged(object sender, EventArgs e)
 		{
+			ChooseMovieLabel.ForeColor = Color.Black;
+
 			foreach (CheckBox button in buttons)
 			{
 				foreach (Seat seat in seats)
