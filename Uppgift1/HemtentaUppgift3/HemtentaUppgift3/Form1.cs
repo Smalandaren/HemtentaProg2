@@ -153,9 +153,12 @@ namespace HemtentaUppgift3
             int index = orderBox.SelectedIndex;
             if(index < orderList.Count())
             {
-                orderBox.Items.RemoveAt(index);
-                orderList.RemoveAt(index);
-                updateOrder();
+                if (orderBox.SelectedIndex != -1)
+                {
+                    orderBox.Items.RemoveAt(index);
+                    orderList.RemoveAt(index);
+                    updateOrder();
+                }
             }
         }
 

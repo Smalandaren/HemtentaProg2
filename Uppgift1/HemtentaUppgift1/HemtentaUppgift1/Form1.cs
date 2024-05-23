@@ -86,8 +86,11 @@ namespace HemtentaUppgift1
 
 		public void RemoveItem()
 		{
-			orderList.RemoveAt(OutputBox.SelectedIndex);
-			UpdateOrder();
+			if(OutputBox.SelectedIndex != -1)
+			{
+                orderList.RemoveAt(OutputBox.SelectedIndex);
+            }
+            UpdateOrder();
 		}
 
 		private void ClearButton_Click(object sender, EventArgs e)
