@@ -37,7 +37,7 @@
 			// BookButton
 			// 
 			this.BookButton.Location = new System.Drawing.Point(687, 387);
-			this.BookButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.BookButton.Margin = new System.Windows.Forms.Padding(2);
 			this.BookButton.Name = "BookButton";
 			this.BookButton.Size = new System.Drawing.Size(104, 54);
 			this.BookButton.TabIndex = 0;
@@ -54,7 +54,7 @@
             "Fall Guy",
             "Boy Kills World"});
 			this.MovieSelector.Location = new System.Drawing.Point(9, 404);
-			this.MovieSelector.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.MovieSelector.Margin = new System.Windows.Forms.Padding(2);
 			this.MovieSelector.Name = "MovieSelector";
 			this.MovieSelector.Size = new System.Drawing.Size(150, 24);
 			this.MovieSelector.TabIndex = 1;
