@@ -20,6 +20,10 @@ namespace HemtentaUppgift3
         }
     }
 
+    /// <summary>
+    /// Klassen för rätter. 
+    /// Varje rätt är in instans av denna klassen med attributen namn, pris och kategori. 
+    /// </summary>
     public class Dish
     {
         public string name;

@@ -48,7 +48,7 @@
 			this.orderButton.TabIndex = 1;
 			this.orderButton.Text = "Beställ";
 			this.orderButton.UseVisualStyleBackColor = true;
-			this.orderButton.Click += new System.EventHandler(this.orderButton_Click);
+			this.orderButton.Click += new System.EventHandler(this.OrderButton_Click);
 			// 
 			// orderedLabel
 			// 

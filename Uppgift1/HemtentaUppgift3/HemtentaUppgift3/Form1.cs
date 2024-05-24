@@ -13,15 +13,17 @@ namespace HemtentaUppgift3
     
     public partial class Form1 : Form
     {
+        //Lista över alla rätter
         public List<Dish> dishes = new List<Dish>();
+
+        //Lista över alla beställningar
         public List<Dish> orderList = new List<Dish>();
 
         public Form1()
         {
             InitializeComponent();
-            fillList();
-            createButtons();
-            
+            FillList();
+            CreateButtons();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -29,7 +31,10 @@ namespace HemtentaUppgift3
 
         }
 
-        public void fillList()
+        /// <summary>
+        /// Skapar alla rätter och lägger in dem i en lista
+        /// </summary>
+        public void FillList()
         {
             dishes.Add(new Dish("Pizza", 75, "Main"));
             dishes.Add(new Dish("Biff", 165, "Main"));
@@ -47,7 +52,10 @@ namespace HemtentaUppgift3
             dishes.Add(new Dish("Vin", 100, "Drink"));
         }
 
-        public void createButtons()
+        /// <summary>
+        /// Skapar knappar för alla rätter genom att loopa genom listan över rätter. Bytar rad beroende på typen av rätt (huvudrätt, efterrätt, dricka). 
+        /// </summary>
+        public void CreateButtons()
         {
             string previousdish = "Main";
 
@@ -76,17 +84,22 @@ namespace HemtentaUppgift3
             }
         }
 
+        /// <summary>
+        /// Metoden för knapparna för de olika rätterna. 
+        /// Kör AddItem() med den motsvarande rätten. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DynamicButtonClick(object sender, EventArgs e)
         {
-            // Get the button that triggered the event
             Button clickedButton = sender as Button;
 
             AddItem(clickedButton.Name);
-            updateOrder();
+            UpdateOrder();
         }
 
         /// <summary>
-        /// Lägger till en item i orderList
+        /// Lägger till den inskickade rätten i beställningslistan
         /// </summary>
         /// <param name="name"></param>
         public void AddItem(string name)
@@ -105,9 +118,9 @@ namespace HemtentaUppgift3
         }
 
         /// <summary>
-        /// Uppdaterar orderboxen genom att rensa den och sätta innehållet till allt i orderlist + räkna ut summan
+        /// Uppdaterar orderboxen (UI) genom att rensa den och sätta innehållet till allt i orderlist + räkna ut och lägga till summan
         /// </summary>
-        public void updateOrder()
+        public void UpdateOrder()
         {
             orderBox.Items.Clear();
 
@@ -122,7 +135,13 @@ namespace HemtentaUppgift3
             orderBox.Items.Add("Summa: " + totalPrice.ToString() + " kr");
         }
 
-        private void orderButton_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Metoden för beställningsknappen. 
+        /// Räknar ut totalpriset, visar att man beställt samt tömmer beställningslistan. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OrderButton_Click(object sender, EventArgs e)
         {
             int totalPrice = 0;
             foreach (Dish dish in orderList)
@@ -135,12 +154,22 @@ namespace HemtentaUppgift3
             orderList.Clear();
         }
 
+        /// <summary>
+        /// Tömmer beställningslistan och orderboxen (UI)
+        /// </summary>
         public void ClearOrder()
         {
             orderList.Clear();
             orderBox.Items.Clear();
         }
 
+        /// <summary>
+        /// Metoden för clearknappen. 
+        /// Kör ClearOrder(). 
+        /// Döljer beställningstexterna
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void clearButton_Click(object sender, EventArgs e)
         {
             ClearOrder();
@@ -148,6 +177,12 @@ namespace HemtentaUppgift3
             totalLabel.Text = "";
         }
 
+        /// <summary>
+        /// Metoden för Ta Bort-knappen. 
+        /// Tar bort den nu valda rätten från beställningslistan och orderboxen (UI). 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void removeButton_Click(object sender, EventArgs e)
         {
             int index = orderBox.SelectedIndex;
@@ -155,9 +190,8 @@ namespace HemtentaUppgift3
             {
                 if (orderBox.SelectedIndex != -1)
                 {
-                    orderBox.Items.RemoveAt(index);
                     orderList.RemoveAt(index);
-                    updateOrder();
+                    UpdateOrder();
                 }
             }
         }
