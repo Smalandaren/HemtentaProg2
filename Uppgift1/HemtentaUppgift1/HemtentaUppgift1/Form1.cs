@@ -43,6 +43,11 @@ namespace HemtentaUppgift1
 
 		}
 
+		/// <summary>
+		/// Koden för Beställknappen som kör Order()
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void OrderButton_Click(object sender, EventArgs e)
 		{
 			Order();
@@ -53,6 +58,9 @@ namespace HemtentaUppgift1
 
 		}
 
+		/// <summary>
+		/// Tar värdena från menyerna och skapar ett nytt beställningsobjekt som läggs till i listan. Uppdaterar UI:n med UpdateOrder()
+		/// </summary>
 		public void Order()
 		{
 			if (SodaDropDown.SelectedIndex != 0 && AmountDropDown.SelectedIndex != 0)
@@ -68,11 +76,17 @@ namespace HemtentaUppgift1
 			} else {Error();}
 		}
 
+		/// <summary>
+		/// Visar ett felmeddelande
+		/// </summary>
 		public void Error() 
 		{
 			ErrorMessage.Visible = true;
         }
 
+		/// <summary>
+		/// Uppdaterar rutan genom att tömma den och lägga in allt från beställningslistan + formattering
+		/// </summary>
 		public void UpdateOrder()
 		{
 			ErrorMessage.Visible = false;
@@ -84,6 +98,9 @@ namespace HemtentaUppgift1
 			}
 		}
 
+		/// <summary>
+		/// Tar bort den valda beställningen från listan. Uppdaterar UI:n med UpdateOrder()
+		/// </summary>
 		public void RemoveItem()
 		{
 			if(OutputBox.SelectedIndex != -1)
@@ -93,12 +110,22 @@ namespace HemtentaUppgift1
             UpdateOrder();
 		}
 
+		/// <summary>
+		/// Koden för clearknappen som tömmer beställningslistan. Uppdaterar UI:n med UpdateOrder()
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void ClearButton_Click(object sender, EventArgs e)
 		{
 			orderList.Clear();
 			UpdateOrder();
 		}
 
+		/// <summary>
+		/// Koden för Ta Bort-knappen som kör RemoveItem()
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void RemoveButton_Click(object sender, EventArgs e)
 		{
 			RemoveItem();

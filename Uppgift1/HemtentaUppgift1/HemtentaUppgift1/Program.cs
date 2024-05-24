@@ -23,7 +23,9 @@ namespace HemtentaUppgift1
 
 	}
 
-
+	/// <summary>
+	/// Klassen för beställningar. Varje beställning är en instans av denna klassen och innehåller smak, antal och sötningsmedel
+	/// </summary>
 	public class OrderItem
 	{
 		public string soda;
