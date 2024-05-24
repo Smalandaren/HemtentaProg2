@@ -118,10 +118,13 @@ namespace HemtentaUppgift2
 					{
 						if (seat.booked)
 						{
+							if (button.Checked) { button.Checked = false; }
+							//button.BackColor = Color.Red;
 							button.Enabled = false;
 						}
 						else
 						{
+							//button.BackColor = Color.White;
 							button.Enabled = true;
 						}
 					}
