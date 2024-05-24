@@ -14,6 +14,7 @@ namespace HemtentaUppgift1
 {
 	public partial class Form1 : Form
 	{
+		//Beställningslistan
 		public List<OrderItem> orderList = new List<OrderItem>();
 		public Form1()
 		{
@@ -44,7 +45,7 @@ namespace HemtentaUppgift1
 		}
 
 		/// <summary>
-		/// Koden för Beställknappen som kör Order()
+		/// Koden för Beställknappen som kör Order(). 
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
@@ -59,7 +60,7 @@ namespace HemtentaUppgift1
 		}
 
 		/// <summary>
-		/// Tar värdena från menyerna och skapar ett nytt beställningsobjekt som läggs till i listan. Uppdaterar UI:n med UpdateOrder()
+		/// Tar värdena från menyerna och skapar ett nytt beställningsobjekt som läggs till i listan. Uppdaterar UI:n med UpdateOrder(). 
 		/// </summary>
 		public void Order()
 		{
@@ -77,7 +78,7 @@ namespace HemtentaUppgift1
 		}
 
 		/// <summary>
-		/// Visar ett felmeddelande
+		/// Visar ett felmeddelande. 
 		/// </summary>
 		public void Error() 
 		{
@@ -85,7 +86,7 @@ namespace HemtentaUppgift1
         }
 
 		/// <summary>
-		/// Uppdaterar rutan genom att tömma den och lägga in allt från beställningslistan + formattering
+		/// Uppdaterar rutan genom att tömma den och lägga in allt från beställningslistan + formattering. 
 		/// </summary>
 		public void UpdateOrder()
 		{
@@ -99,7 +100,7 @@ namespace HemtentaUppgift1
 		}
 
 		/// <summary>
-		/// Tar bort den valda beställningen från listan. Uppdaterar UI:n med UpdateOrder()
+		/// Tar bort den valda beställningen från listan. Uppdaterar UI:n med UpdateOrder(). 
 		/// </summary>
 		public void RemoveItem()
 		{
@@ -111,7 +112,7 @@ namespace HemtentaUppgift1
 		}
 
 		/// <summary>
-		/// Koden för clearknappen som tömmer beställningslistan. Uppdaterar UI:n med UpdateOrder()
+		/// Koden för clearknappen som tömmer beställningslistan. Uppdaterar UI:n med UpdateOrder(). 
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
@@ -122,7 +123,7 @@ namespace HemtentaUppgift1
 		}
 
 		/// <summary>
-		/// Koden för Ta Bort-knappen som kör RemoveItem()
+		/// Koden för Ta Bort-knappen som kör RemoveItem(). 
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>

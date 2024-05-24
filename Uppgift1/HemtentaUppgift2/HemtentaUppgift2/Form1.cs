@@ -7,8 +7,10 @@ namespace HemtentaUppgift2
 {
     public partial class Form1 : Form
     {
-
+		//Lista över alla platser (2 av varje plats, en för varje film)
         public List<Seat> seats = new List<Seat>();
+
+		//Lista över alla knappar, endast en uppsättning
 		public List<CheckBox> buttons = new List<CheckBox>();
 
         public Form1()
@@ -18,6 +20,11 @@ namespace HemtentaUppgift2
 			FillSeatList();
 		}
 
+		/// <summary>
+		/// Metoden för bokningsknappen. Loopar genom alla platser för varje knapp och bokar en plats om den hittar en vald knapp. 
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void BookButton_Click(object sender, EventArgs e)
 		{
 			if(MovieSelector.Text == String.Empty)
@@ -32,7 +39,6 @@ namespace HemtentaUppgift2
 			{
 				foreach (Seat seat in seats)
 				{
-                    //Console.WriteLine($"{button.Name} + {seat.name} + {MovieSelector.Text} + {seat.movie} + {button.Checked}");
                     if (button.Name == seat.name && seat.movie == MovieSelector.Text && button.Checked)
 					{
 						found = true;
@@ -50,6 +56,9 @@ namespace HemtentaUppgift2
 			}
 		}
 
+		/// <summary>
+		/// Skapar alla platser - en för varje plats för varje film - och lägger dem i listan 'seats'. 
+		/// </summary>
         public void FillSeatList()
         {
 			string[] movies = new string[2] { "Fall Guy", "Boy Kills World" };
@@ -66,6 +75,10 @@ namespace HemtentaUppgift2
 			}
 		}
 
+		/// <summary>
+		/// Skapar alla knappar som motsvarar de olika platserna och ger dem namn och text. 
+		/// Lägger också till dem i en lista med alla knappar för att underlätta loopning. 
+		/// </summary>
         public void CreateButtons()
         {
 			int x = 10;
@@ -97,14 +110,22 @@ namespace HemtentaUppgift2
 			
 		}
 
+		/// <summary>
+		/// Metoden för när platsknapper trycks på, används inte
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void DynamicButtonClick(object sender, EventArgs e)
 		{
-			// Get the button that triggered the event
 			Button clickedButton = sender as Button;
-
-			
 		}
 
+		/// <summary>
+		/// Metoden för när valet av film ändras. 
+		/// Loopar genom alla knappar och platser och disablar eller enablar de beroende på om de är bokade för den valde filmen. 
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void MovieSelector_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			ChooseMovieLabel.ForeColor = Color.Black;
@@ -113,7 +134,6 @@ namespace HemtentaUppgift2
 			{
 				foreach (Seat seat in seats)
 				{ 
-					//Console.WriteLine($"{button.Name} + {seat.name} + {MovieSelector.Text} + {seat.movie} + {button.Checked}");
 					if (button.Name == seat.name && seat.movie == MovieSelector.Text)
 					{
 						if (seat.booked)
