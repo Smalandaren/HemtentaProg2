@@ -149,8 +149,9 @@ namespace HemtentaUppgift3
                 totalPrice += dish.price;
             }
 
-            totalLabel.Text = "\nSumma: " + totalPrice.ToString() + " kr";
+            totalLabel.Text = "Summa: " + totalPrice.ToString() + " kr";
             orderedLabel.Visible = true;
+            funLabel.Visible = true;
             orderList.Clear();
         }
 
@@ -174,6 +175,7 @@ namespace HemtentaUppgift3
         {
             ClearOrder();
             orderedLabel.Visible = false;
+            funLabel.Visible = false;
             totalLabel.Text = "";
         }
 

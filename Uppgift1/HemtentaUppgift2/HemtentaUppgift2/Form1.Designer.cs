@@ -36,9 +36,10 @@
 			// 
 			// BookButton
 			// 
-			this.BookButton.Location = new System.Drawing.Point(916, 476);
+			this.BookButton.Location = new System.Drawing.Point(687, 387);
+			this.BookButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.BookButton.Name = "BookButton";
-			this.BookButton.Size = new System.Drawing.Size(139, 66);
+			this.BookButton.Size = new System.Drawing.Size(104, 54);
 			this.BookButton.TabIndex = 0;
 			this.BookButton.Text = "Boka";
 			this.BookButton.UseVisualStyleBackColor = true;
@@ -52,9 +53,10 @@
 			this.MovieSelector.Items.AddRange(new object[] {
             "Fall Guy",
             "Boy Kills World"});
-			this.MovieSelector.Location = new System.Drawing.Point(12, 497);
+			this.MovieSelector.Location = new System.Drawing.Point(9, 404);
+			this.MovieSelector.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.MovieSelector.Name = "MovieSelector";
-			this.MovieSelector.Size = new System.Drawing.Size(199, 28);
+			this.MovieSelector.Size = new System.Drawing.Size(150, 24);
 			this.MovieSelector.TabIndex = 1;
 			this.MovieSelector.SelectedIndexChanged += new System.EventHandler(this.MovieSelector_SelectedIndexChanged);
 			// 
@@ -62,9 +64,10 @@
 			// 
 			this.ChooseSeatLabel.AutoSize = true;
 			this.ChooseSeatLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-			this.ChooseSeatLabel.Location = new System.Drawing.Point(324, 17);
+			this.ChooseSeatLabel.Location = new System.Drawing.Point(243, 14);
+			this.ChooseSeatLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.ChooseSeatLabel.Name = "ChooseSeatLabel";
-			this.ChooseSeatLabel.Size = new System.Drawing.Size(444, 39);
+			this.ChooseSeatLabel.Size = new System.Drawing.Size(352, 31);
 			this.ChooseSeatLabel.TabIndex = 2;
 			this.ChooseSeatLabel.Text = "Välj vilka platser du vill boka";
 			// 
@@ -72,24 +75,24 @@
 			// 
 			this.ChooseMovieLabel.AutoSize = true;
 			this.ChooseMovieLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-			this.ChooseMovieLabel.Location = new System.Drawing.Point(12, 463);
+			this.ChooseMovieLabel.Location = new System.Drawing.Point(9, 376);
+			this.ChooseMovieLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.ChooseMovieLabel.Name = "ChooseMovieLabel";
-			this.ChooseMovieLabel.Size = new System.Drawing.Size(108, 31);
+			this.ChooseMovieLabel.Size = new System.Drawing.Size(90, 26);
 			this.ChooseMovieLabel.TabIndex = 3;
 			this.ChooseMovieLabel.Text = "Välj film";
 			// 
 			// Form1
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1067, 554);
+			this.ClientSize = new System.Drawing.Size(800, 450);
 			this.Controls.Add(this.ChooseMovieLabel);
 			this.Controls.Add(this.ChooseSeatLabel);
 			this.Controls.Add(this.MovieSelector);
 			this.Controls.Add(this.BookButton);
-			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "Form1";
-			this.Text = "Form1";
+			this.Text = "Biosalong";
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
